@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Amigos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            align: center;
+            font-size: large;
+            background-color: pink;
+            text-align: center;
+            padding-top: 20%;
+        }
+        input{
+            font-size: 23px;
+            height:60px;
+            width:60px ;
+            margin-left: 3%;
+        }
+        .corazon:hover{
+            border: 0px;
+            color: aliceblue;
+            background-position: center;
+            background-color: pink;
+            background-image:url("https://upload.wikimedia.org/wikipedia/commons/4/44/Coraz%C3%B3n.svg");
+            background-size: 95%;
+            background-repeat: no-repeat;
+            color: aliceblue;
+            background-position: center;
+            background-color: pink;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+    </style>
+    <script>
+        var myArray = ['0','1','2','3','4','5','6','7'];
+        n=0;
+        function alatorio(){
+            var i,j,k;
+            for (i = myArray.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            k = myArray[i - 1];
+            myArray[i - 1] = myArray[j];
+            myArray[j] = k;
+            }
+        }
+
+        function accionParaCuandoEllaDigaQueSi(){
+            let text=['Ary eres la mejor amigas❤️','Yo Sabia Que Soy Un Gran Amigo Para ti Ary Por Eso TQM🥺❤️'
+                    ,' Gracias por ser mi amiga Ary🥺❤️','❤️Gracias Ary por aparecer en mi vida',
+                    'Ary Te amo 🥺❤️❣️','Ary eres una Diosa🥰❤️',
+                    'Ary eres la amiga mas bella y hermosa que tengo🥺❤️','Ary Te quiero mucho❤️❤️'];
+            if(n!=7){
+                n++;
+            }else{
+                myArray = ['0','1','2','3','4','5','6','7'];
+                alatorio();
+                n=0;
+            }
+            alert(text[n]);
+        }
+
+        function mueveElBoton(){
+            width = window.innerWidth-20;
+            height = window.innerHeight-20;
+
+            newWidth = (Math.random() * width);
+            newHeight = (Math.random() * height);
+
+            document.getElementById('btnNo').style.position = "absolute";
+            document.getElementById('btnNo').style.left = newWidth + "px";
+            document.getElementById('btnNo').style.top = newHeight + "px";
+        }
+    </script>
+</head>
+<body >
+    <h3>Ary En verdad soy un gran amigo🥺?</h3>
+    <input class="corazon" type="button" onclick="accionParaCuandoEllaDigaQueSi()" id="btnSi" value="Si" />
+    <input class="boto" type="button" id="btnNo" onmouseover="mueveElBoton()" value="No" />
+    <img src="" width="200">
+</body>
+</html
